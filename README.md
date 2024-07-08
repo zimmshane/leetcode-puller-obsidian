@@ -145,9 +145,6 @@ tags:
 - 
 ## Solution
 
-   ``` 
-# Solution
-   ```
 
 ## Complexity Analysis
 
