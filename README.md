@@ -32,13 +32,17 @@ This is my first little coding project :) It aims to streamline the process of d
 - Customize tag prefixes for better integration with your existing tag system
 
 ## Screenshots
+
 Auto populated properties
+
 ![Screenshot of script-generated properies field](docs/Screenshots/autogen-properties-screenshot.png)
 
 Sample Output
+
 ![Screenshot of script-generated problem text field](docs/Screenshots/autogen-problem-screenshot.png)
 
 Some support for more complex questions
+
 ![Screenshot of script-generated image in example callout](docs/Screenshots/image-in-example-screenshot.png)
 
 ## Prerequisites
