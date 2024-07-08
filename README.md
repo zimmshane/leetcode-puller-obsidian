@@ -33,13 +33,13 @@ This is my first little coding project :) It aims to streamline the process of d
 
 ## Screenshots
 Auto populated properties
-![Screenshot of script-generated properies field](docs\Screenshots\autogen-properties-screenshot.png)
+![Screenshot of script-generated properies field](docs/Screenshots/autogen-properties-screenshot.png)
 
 Sample Output
-![Screenshot of script-generated problem text field](docs\Screenshots\autogen-problem-screenshot.png)
+![Screenshot of script-generated problem text field](docs/Screenshots/autogen-problem-screenshot.png)
 
 Some support for more complex questions
-![Screenshot of script-generated image in example callout](docs\Screenshots\image-in-example-screenshot.png)
+![Screenshot of script-generated image in example callout](docs/Screenshots/image-in-example-screenshot.png)
 
 ## Prerequisites
 
@@ -64,14 +64,14 @@ Before using this script, ensure you have the following:
 2. Select the LeetCode QuickAdd Macro you created
 3. Enter the title slug of the LeetCode problem when prompted
    (e.g., for the problem "Two Sum" at https://leetcode.com/problems/two-sum/, enter "two-sum")
-   ![Problem Search Screenshot](docs\Screenshots\problem-search-screenshot.png)
+   ![Problem Search Screenshot](docs/Screenshots/problem-search-screenshot.png)
 4. The script will fetch the problem details and create a new note with the formatted information
 
 ## Configuration
 
 You can customize the script behavior by modifying the following settings in the QuickAdd Macro configuration:
 
-- **LeetCode Tag Prefix**: Set a prefix for LeetCode problem tags (default: "leetcode/")
+- **LeetCode Tag Prefix**: Set a prefix for LeetCode problem/tags (default: "leetcode/")
 >[!TIP]
 >To change these settings:
 >1. Open the QuickAdd plugin settings
@@ -153,15 +153,14 @@ tags:
 ```
 
 Effective tagging and the [Dataview Plugin](https://github.com/blacksmithgu/obsidian-dataview) allow for some cool tracking and filtering of the problems. Check it out:
-![](docs\Screenshots\dataview effective tagging.png)
+![dataview](docs/Screenshots/dataview effective tagging.png)
 
 ## Limitations
 
 - Currently untested on mobile
 - Due to the large varience in Leetcode questions it sometimes has small formatting issue, particularly with examples and constraints. 
 - Probably many more!
-
-
+/
 
 ## License
 
