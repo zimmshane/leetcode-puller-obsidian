@@ -145,9 +145,9 @@ tags:
 - 
 ## Solution
 
-```python
+   ```python
 # Solution
-```
+   ```
 
 ## Complexity Analysis
 
@@ -166,7 +166,7 @@ Effective tagging and the [Dataview Plugin](https://github.com/blacksmithgu/obsi
 - Currently untested on mobile
 - Due to the large varience in Leetcode questions it sometimes has small formatting issue, particularly with examples and constraints. 
 - Probably many more!
-/
+
 
 ## License
 
