@@ -145,7 +145,7 @@ tags:
 - 
 ## Solution
 
-   ```python
+   ``` 
 # Solution
    ```
 
@@ -157,7 +157,6 @@ tags:
 ## Reflections
 - 
 ```
-
 Effective tagging and the [Dataview Plugin](https://github.com/blacksmithgu/obsidian-dataview) allow for some cool tracking and filtering of the problems. Check it out:
 ![dataview](docs/Screenshots/dataview effective tagging.png)
 
