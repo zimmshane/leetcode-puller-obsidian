@@ -109,8 +109,7 @@ The LeetCode QuickAdd script provides several variables that you can use in your
 | `{{VALUE:id}}` | The LeetCode problem ID | `1` |
 | `{{VALUE:title}}` | The title of the problem | `"Two Sum"` |
 | `{{VALUE:difficulty}}` | The difficulty level of the problem | `"Easy"` |
-| `{{difficulty}}` | The problem's difficulty | `Easy` |
-| `{{link}}` | The URL of the problem | `"https://leetcode.com/problems/two-sum"` |
+| `{{VALUE:link}}` | The URL of the problem | `"https://leetcode.com/problems/two-sum"` |
 | `{{VALUE:problemStatement}}` | The full problem statement in Markdown format | (Markdown formatted text) |
 | `{{VALUE:tags}}` | A formatted list of problem tags with customizable prefix | `- leetcode/array` |
 | `{{VALUE:fileName}}` | A sanitized filename for the note | `1. "Two Sum"` |
