@@ -132,27 +132,35 @@ tags:
 {{VALUE:tags}} 
    - programming/practice
    - leetcode/problem
-   - your/tags
 ---
 # {{VALUE:title}}
 
-## Problem Statement
+## Question
 {{VALUE:problemStatement}}
-## Hints
+### Hints
 {{VALUE:formattedHints}}
-## Approach
 
-- 
+---
 ## Solution
 
+### Intuition
+<!--Describe your first thoughts on how to solve this problem -->
 
-## Complexity Analysis
 
-- Time complexity: 
-- Space complexity: 
+### Approach
+<!-- Describe your approach to solving the problem. -->
 
-## Reflections
-- 
+
+### Complexity
+
+#### Time complexity
+
+
+#### Space complexity
+
+
+### Code
+---
 ```
 Effective tagging and the [Dataview Plugin](https://github.com/blacksmithgu/obsidian-dataview) allow for some cool tracking and filtering of the problems. Check it out:
 ![dataview](docs/Screenshots/dataview-effective-tagging.png)
