@@ -43,7 +43,10 @@ async function start(params, settings) {
     QuickAdd = params;
     Settings = settings;
 
-    const titleSlug = await promptForTitleSlug();
+    const input = await promptForInput();
+    if (!input) return;
+
+    const titleSlug = extractTitleSlug(input);
     if (!titleSlug) return;
 
     const problemData = await getLeetCodeProblem(titleSlug);
@@ -53,16 +56,38 @@ async function start(params, settings) {
 }
 
 /**
- * Prompts the user for a LeetCode problem title slug
- * @returns {string|null} The entered title slug or null if cancelled
+ * Prompts the user for a LeetCode problem title slug or URL
+ * @returns {string|null} The entered input or null if cancelled
  */
-async function promptForTitleSlug() {
-    const titleSlug = await QuickAdd.quickAddApi.inputPrompt("Enter LeetCode problem title slug:");
-    if (!titleSlug) {
-        notice("No title slug entered.");
+async function promptForInput() {
+    const input = await QuickAdd.quickAddApi.inputPrompt("Enter LeetCode problem title slug or URL:");
+    if (!input) {
+        notice("No input entered.");
         return null;
     }
-    return titleSlug;
+    return input;
+}
+
+/**
+ * Extracts the title slug from the input (URL or title slug)
+ * @param {string} input - The user input (URL or title slug)
+ * @returns {string|null} The extracted title slug or null if invalid
+ */
+function extractTitleSlug(input) {
+    // Check if the input is a URL
+    if (input.startsWith('http://') || input.startsWith('https://')) {
+        const url = new URL(input);
+        const pathParts = url.pathname.split('/');
+        const problemsIndex = pathParts.indexOf('problems');
+        if (problemsIndex !== -1 && problemsIndex < pathParts.length - 1) {
+            return pathParts[problemsIndex + 1];
+        } else {
+            notice("Invalid LeetCode URL. Unable to extract title slug.");
+            return null;
+        }
+    }
+    // If not a URL, assume it's already a title slug
+    return input;
 }
 
 /**
