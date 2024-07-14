@@ -154,6 +154,7 @@ function convertHtmlToMarkdown(html) {
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&amp;/g, '&')
+        .replace(/&#39;/g,'\'')
         .replace(/<img[^>]*src="([^"]*)"[^>]*>/g, '![]($1)')
         .replace(/&quot;/g,'"');
 
