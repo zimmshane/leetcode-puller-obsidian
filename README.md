@@ -23,7 +23,7 @@ This is my first little coding project :) It aims to streamline the process of d
 
 ## Features
 
-- Fetch LeetCode problem details using the problem's title slug
+- Fetch LeetCode problem details using the problem's URL or title slug
 - Automatically format problem statements, examples, constraints, and follow-up questions
 - Convert HTML content to Markdown for better compatibility with Obsidian
 - Create structured notes with problem metadata, including difficulty and tags
@@ -66,12 +66,8 @@ Before using this script, ensure you have the following:
 
 1. Trigger the QuickAdd menu in Obsidian
 2. Select the LeetCode QuickAdd Macro you created
-3. Enter the title slug of the LeetCode problem when prompted
-   (e.g., for the problem "Two Sum" at https://leetcode.com/problems/two-sum/, enter "two-sum")
-   
-   ![Problem Search Screenshot](docs/Screenshots/problem-search-screenshot.png)
-   
-5. The script will fetch the problem details and create a new note with the formatted information
+3. Enter the URL or title slug of the LeetCode problem when prompted   
+4. The script will fetch the problem details and create a new note with the formatted information
 
 ## Configuration
 
