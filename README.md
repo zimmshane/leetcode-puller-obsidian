@@ -180,6 +180,7 @@ This project is licensed under the MPL-2 License - see the [LICENSE](LICENSE) fi
 
 ---
 
-Made with ❤️ by Shane Zimmerman
-
 If you find this script helpful, consider starring the repository and sharing it with others!
+
+love,
+Shane
