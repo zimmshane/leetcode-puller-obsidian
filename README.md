@@ -59,7 +59,7 @@ Before using this script, ensure you have the following:
 3. Open the QuickAdd plugin settings in Obsidian
 4. Create a new Macro and add a "User Script" choice
 5. Select the `leetcode-quickadd.js` file as the script for this choice
-6. Add a page template for your Macro to use. See my personal example [below](###Using Variables in Your Template) for reference
+6. Add a page template for your Macro to use. See my personal example [below](#using-variables-in-your-template) for reference
 7. Configure the Macro settings as desired (e.g., output folder for LeetCode notes)
 
 ## Usage
@@ -158,6 +158,7 @@ tags:
 ---
 ```
 Effective tagging and the [Dataview Plugin](https://github.com/blacksmithgu/obsidian-dataview) allow for some cool tracking and filtering of the problems. Check it out:
+
 ![dataview](docs/Screenshots/dataview-effective-tagging.png)
 
 ## Limitations
@@ -181,6 +182,4 @@ This project is licensed under the MPL-2 License - see the [LICENSE](LICENSE) fi
 ---
 
 If you find this script helpful, consider starring the repository and sharing it with others!
-
-love,
-Shane
+Thanks!  Shane Z :)
