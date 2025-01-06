@@ -11,6 +11,7 @@ const log = msg => console.log(msg);
 
 // Constants
 const API_URL = "https://alfa-leetcode-api.onrender.com/select";
+// const API_URL = "http://localhost:3000/select";
 const TAG_PREFIX_SETTING = "LeetCode Tag Prefix";
 
 // QuickAdd module configuration
@@ -181,6 +182,7 @@ function convertHtmlToMarkdown(html) {
         .replace(/&amp;/g, '&')
         .replace(/&#39;/g,'\'')
         .replace(/<img[^>]*src="([^"]*)"[^>]*>/g, '![]($1)')
+        .replace(/<span class="example-io">(.*?)<\/span>/g, '$1')
         .replace(/&quot;/g,'"');
 
     return formatLists(markdown);
@@ -229,22 +231,35 @@ function formatLists(markdown) {
  * @returns {string} Markdown with formatted examples
  */
 function formatExamples(markdown) {
+    // console.log(markdown); 
     let exampleCount = 1;
     return markdown.replace(/Example \d+:([\s\S]*?)(?=Example \d+:|Constraints:|Follow-up:|$)/g, (match, content) => {
         const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
-        const inputMatch = content.match(/Input:?\s*([\s\S]*?)(?=Output|$)/i);
-        const outputMatch = content.match(/Output:?\s*([\s\S]*?)(?=Explanation|$)/i);
-        const explanationMatch = content.match(/Explanation:?\s*([\s\S]*?)$/i);
-        
+        const inputMatch = content.match(/Input:.*?([\s\S]*?)(?=<\/div>|Output|$)/i);
+        const outputMatch = content.match(/Output:.*?([\s\S]*?)(?=<\/div>|Explanation|$)/i);
+        const explanationMatch = content.match(/Explanation:.*?([\s\S]*)/i); 
+
         let formattedExample = `>[!Example]+ Example ${exampleCount}\n`;
-        if (imageMatch) formattedExample += `>![](${imageMatch[1]})\n>\n`;
-        if (inputMatch) formattedExample += `>**Input**: \`${inputMatch[1].trim()}\`\n`;
-        if (outputMatch) formattedExample += `>**Output**: \`${outputMatch[1].trim()}\`\n`;
-        if (explanationMatch) {
-            let explanation = explanationMatch[1].trim().replace(/\n/g, '\n>');
-            formattedExample += `>**Explanation**: \`${explanation}\`\n`;
+        if (imageMatch) {
+            formattedExample += `>![](${imageMatch[1]})\n>\n`;
         }
-        
+        if (inputMatch) {
+            formattedExample += `>**Input**: \`${inputMatch[1].trim()}\`\n`;
+        }
+        if (outputMatch) {
+            formattedExample += `>**Output**: \`${outputMatch[1].trim()}\`\n`;
+        }
+        if (explanationMatch) {
+            let explanation = explanationMatch[1]
+                .trim()
+                .replace(/<\/?div>/g, '') 
+                .replace(/`$/, '') 
+                .replace(/\n/g, ' ') 
+                .replace(/(\d+\))\s?/g, '\n> $1 '); 
+
+            formattedExample += `>**Explanation**:\n>${explanation}\n`;
+        }
+
         exampleCount++;
         return formattedExample + '\n';
     });
